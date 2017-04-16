@@ -39,3 +39,15 @@ internal final class ScholarsViewController: UIViewController {
     }
     
 }
+
+extension ScholarsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 50
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let scholarCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScholarCell", for: indexPath)
+        
+        return scholarCell
+    }
+}

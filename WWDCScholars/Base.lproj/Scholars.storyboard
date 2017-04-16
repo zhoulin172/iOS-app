@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A294a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8qZ-uI-XB1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8qZ-uI-XB1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -78,19 +78,55 @@
                                 <rect key="frame" x="0.0" y="114" width="375" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rzr-ac-a4m">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="140" height="170"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3i4-7J-cGt">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ScholarCollectionViewCell" id="k0F-2x-dYt" customClass="ScholarCollectionViewCell" customModule="WWDCScholars" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ifi-oi-wPz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="170"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="profilePic"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSp-h1-bsW">
+                                                    <rect key="frame" x="0.0" y="140" width="140" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Zkp-T0-JlK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="lSp-h1-bsW" secondAttribute="trailing" id="9dH-n4-MHm"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ifi-oi-wPz" secondAttribute="bottom" id="CWV-jc-XPI"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ifi-oi-wPz" secondAttribute="bottom" id="PMi-as-D3N"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ifi-oi-wPz" secondAttribute="trailing" id="QLo-D3-0qc"/>
+                                            <constraint firstItem="Ifi-oi-wPz" firstAttribute="top" secondItem="k0F-2x-dYt" secondAttribute="top" id="UiH-e3-lcg"/>
+                                            <constraint firstItem="Ifi-oi-wPz" firstAttribute="top" secondItem="k0F-2x-dYt" secondAttribute="top" id="YH2-TJ-Eoq"/>
+                                            <constraint firstItem="Ifi-oi-wPz" firstAttribute="leading" secondItem="k0F-2x-dYt" secondAttribute="leading" id="fL8-TG-Lyk"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ifi-oi-wPz" secondAttribute="trailing" id="lgy-Qa-2Yt"/>
+                                            <constraint firstItem="Ifi-oi-wPz" firstAttribute="leading" secondItem="k0F-2x-dYt" secondAttribute="leading" id="mNn-Cw-BnJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ifi-oi-wPz" secondAttribute="bottom" id="nJg-GP-8zw"/>
+                                            <constraint firstAttribute="bottom" secondItem="lSp-h1-bsW" secondAttribute="bottom" id="nha-2z-bhS"/>
+                                            <constraint firstItem="Ifi-oi-wPz" firstAttribute="leading" secondItem="k0F-2x-dYt" secondAttribute="leading" id="pr4-O2-zNR"/>
+                                            <constraint firstItem="lSp-h1-bsW" firstAttribute="leading" secondItem="k0F-2x-dYt" secondAttribute="leading" id="ucX-v8-Tif"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ifi-oi-wPz" secondAttribute="trailing" id="w9t-T3-6Wv"/>
+                                            <constraint firstItem="Ifi-oi-wPz" firstAttribute="top" secondItem="k0F-2x-dYt" secondAttribute="top" id="zs5-9d-SnK"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="lSp-h1-bsW" id="4nX-K9-UVT"/>
+                                            <outlet property="profilePictureImageView" destination="Ifi-oi-wPz" id="JvP-Kx-4rE"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

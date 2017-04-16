@@ -14,7 +14,7 @@ public typealias SaveCompletionBlock = ((CKRecord, Error?) -> Swift.Void)?
 protocol CloudKitItem {
     var id: CKRecordID { get set }
     
-    init(record: CKRecord) throws
+    init(record: CKRecord)
     
     func makeCKRecord() -> CKRecord
     

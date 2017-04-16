@@ -1,6 +1,6 @@
 //
 //  ScholarStatus.swift
-//  WWDCScholars-Backend
+//  WWDCScholars
 //
 //  Created by Matthijs Logemann on 06/04/2017.
 //

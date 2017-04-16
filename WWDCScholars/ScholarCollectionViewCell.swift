@@ -10,4 +10,7 @@ import UIKit
 
 class ScholarCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
 }

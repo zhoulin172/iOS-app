@@ -32,12 +32,13 @@
 		6E5CA51E1EA172E70018ECB9 /* UIView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5CA51D1EA172E70018ECB9 /* UIView+Style.swift */; };
 		7BC8A55A1EA2D7F000C3C8B4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC8A5591EA2D7F000C3C8B4 /* CloudKit.framework */; };
 		7BC8A55D1EA2DD4300C3C8B4 /* Scholar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8A55C1EA2DD4300C3C8B4 /* Scholar.swift */; };
-		7BC8A55F1EA3647E00C3C8B4 /* WWDCItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8A55E1EA3647E00C3C8B4 /* WWDCItem.swift */; };
-		7BC8A5611EA3648200C3C8B4 /* ScholarStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8A5601EA3648200C3C8B4 /* ScholarStatus.swift */; };
 		7BC8A5631EA36B8100C3C8B4 /* CloudKitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8A5621EA36B8100C3C8B4 /* CloudKitItem.swift */; };
-		7BC8A5651EA37CF200C3C8B4 /* IMG_1817.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 7BC8A5641EA37CF200C3C8B4 /* IMG_1817.PNG */; };
 		7BC8A5671EA37F2300C3C8B4 /* CKHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8A5661EA37F2300C3C8B4 /* CKHelper.swift */; };
 		7BC8A7451EA3C0E500C3C8B4 /* ScholarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8A7441EA3C0E500C3C8B4 /* ScholarCollectionViewCell.swift */; };
+		7BC8A7471EA4073B00C3C8B4 /* WWDCYearInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8A7461EA4073B00C3C8B4 /* WWDCYearInfo.swift */; };
+		7BC8A7491EA4074E00C3C8B4 /* WWDCYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8A7481EA4074E00C3C8B4 /* WWDCYear.swift */; };
+		7BC8A74B1EA40B6D00C3C8B4 /* ScholarSocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8A74A1EA40B6D00C3C8B4 /* ScholarSocialMedia.swift */; };
+		7BC8A74F1EA4147800C3C8B4 /* ScholarStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8A74E1EA4147800C3C8B4 /* ScholarStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,12 +70,13 @@
 		7BC8A5571EA2D76A00C3C8B4 /* WWDCScholars.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WWDCScholars.entitlements; sourceTree = "<group>"; };
 		7BC8A5591EA2D7F000C3C8B4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		7BC8A55C1EA2DD4300C3C8B4 /* Scholar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scholar.swift; path = WWDCScholars/Models/Scholar.swift; sourceTree = "<group>"; };
-		7BC8A55E1EA3647E00C3C8B4 /* WWDCItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWDCItem.swift; sourceTree = "<group>"; };
-		7BC8A5601EA3648200C3C8B4 /* ScholarStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScholarStatus.swift; sourceTree = "<group>"; };
 		7BC8A5621EA36B8100C3C8B4 /* CloudKitItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitItem.swift; path = WWDCScholars/Models/CloudKitItem.swift; sourceTree = "<group>"; };
-		7BC8A5641EA37CF200C3C8B4 /* IMG_1817.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_1817.PNG; sourceTree = "<group>"; };
 		7BC8A5661EA37F2300C3C8B4 /* CKHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CKHelper.swift; path = API/CKHelper.swift; sourceTree = "<group>"; };
 		7BC8A7441EA3C0E500C3C8B4 /* ScholarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScholarCollectionViewCell.swift; sourceTree = "<group>"; };
+		7BC8A7461EA4073B00C3C8B4 /* WWDCYearInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WWDCYearInfo.swift; path = WWDCScholars/Models/WWDCYearInfo.swift; sourceTree = "<group>"; };
+		7BC8A7481EA4074E00C3C8B4 /* WWDCYear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WWDCYear.swift; path = WWDCScholars/Models/WWDCYear.swift; sourceTree = "<group>"; };
+		7BC8A74A1EA40B6D00C3C8B4 /* ScholarSocialMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScholarSocialMedia.swift; path = WWDCScholars/Models/ScholarSocialMedia.swift; sourceTree = "<group>"; };
+		7BC8A74E1EA4147800C3C8B4 /* ScholarStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScholarStatus.swift; path = WWDCScholars/Models/ScholarStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				6E127D561EA3C69D0068F7DB /* Storyboards */,
-				7BC8A5641EA37CF200C3C8B4 /* IMG_1817.PNG */,
 				7BC8A5571EA2D76A00C3C8B4 /* WWDCScholars.entitlements */,
 				7BC8A5681EA3815900C3C8B4 /* Api */,
 				7BC8A55B1EA2DD0D00C3C8B4 /* Models */,
@@ -209,8 +210,10 @@
 		7BC8A55B1EA2DD0D00C3C8B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7BC8A5601EA3648200C3C8B4 /* ScholarStatus.swift */,
-				7BC8A55E1EA3647E00C3C8B4 /* WWDCItem.swift */,
+				7BC8A74E1EA4147800C3C8B4 /* ScholarStatus.swift */,
+				7BC8A74A1EA40B6D00C3C8B4 /* ScholarSocialMedia.swift */,
+				7BC8A7461EA4073B00C3C8B4 /* WWDCYearInfo.swift */,
+				7BC8A7481EA4074E00C3C8B4 /* WWDCYear.swift */,
 				7BC8A55C1EA2DD4300C3C8B4 /* Scholar.swift */,
 				7BC8A5621EA36B8100C3C8B4 /* CloudKitItem.swift */,
 			);
@@ -294,7 +297,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC8A5651EA37CF200C3C8B4 /* IMG_1817.PNG in Resources */,
 				6E3C55571EA032DD008F9AC9 /* LaunchScreen.storyboard in Resources */,
 				6E127D501EA3C67F0068F7DB /* Activity.storyboard in Resources */,
 				6E127D4B1EA3C65D0068F7DB /* Scholars.storyboard in Resources */,
@@ -314,25 +316,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BC8A74B1EA40B6D00C3C8B4 /* ScholarSocialMedia.swift in Sources */,
 				6E5CA51E1EA172E70018ECB9 /* UIView+Style.swift in Sources */,
+				7BC8A7471EA4073B00C3C8B4 /* WWDCYearInfo.swift in Sources */,
 				6E3C554D1EA032DD008F9AC9 /* AppDelegate.swift in Sources */,
 				6E3C55631EA03D17008F9AC9 /* UITabBar+Style.swift in Sources */,
 				6E3C55601EA03C6D008F9AC9 /* ScholarsViewController.swift in Sources */,
+				7BC8A74F1EA4147800C3C8B4 /* ScholarStatus.swift in Sources */,
 				6E127D5A1EA3C6FA0068F7DB /* ProfileViewController.swift in Sources */,
 				6E5CA5151EA16A810018ECB9 /* NavigationBarExtensionView.swift in Sources */,
 				6E4806211EA14FA700213835 /* UIStatusBar.swift in Sources */,
 				6E48061C1EA14EC500213835 /* ActivityViewController.swift in Sources */,
 				6E3C55661EA03DFE008F9AC9 /* UIColor+Style.swift in Sources */,
+				7BC8A7491EA4074E00C3C8B4 /* WWDCYear.swift in Sources */,
 				7BC8A55D1EA2DD4300C3C8B4 /* Scholar.swift in Sources */,
 				7BC8A5671EA37F2300C3C8B4 /* CKHelper.swift in Sources */,
 				6E3C55681EA042F3008F9AC9 /* UINavigationBar+Style.swift in Sources */,
-				7BC8A55F1EA3647E00C3C8B4 /* WWDCItem.swift in Sources */,
 				6E48061E1EA14ED100213835 /* NearbyViewController.swift in Sources */,
 				6E48061A1EA14EB700213835 /* BlogViewController.swift in Sources */,
 				6E5CA51A1EA16AE50018ECB9 /* ConstraintHelper.swift in Sources */,
 				7BC8A5631EA36B8100C3C8B4 /* CloudKitItem.swift in Sources */,
 				7BC8A7451EA3C0E500C3C8B4 /* ScholarCollectionViewCell.swift in Sources */,
-				7BC8A5611EA3648200C3C8B4 /* ScholarStatus.swift in Sources */,
 				6E4806181EA14E8600213835 /* TeamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

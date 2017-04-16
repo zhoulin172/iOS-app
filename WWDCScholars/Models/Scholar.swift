@@ -20,23 +20,18 @@ final class Scholar: CloudKitItem {
     public var birthday : Date
     public var shortBio : String
     
-    public var batchWWDC : [CKReference] = [] //WWDCItem
-    
+    public var wwdcYears : [CKReference] = [] //-> WWDCYear
+    public var wwdcYearInfos : [CKReference] = [] //-> WWDCYearInfo
+
     // Location
     public var location : CLLocation
     
     // URLs
-    public var imessage : String?
-    public var itunes : String?
-    public var website : String?
-    public var linkedin : String?
-    public var github : String?
-    public var facebook : String?
-    public var twitter : String?
+    public var socialMediaReference: CKReference! //-> ScholarSocialMedia
     
     // Useful dates
     public fileprivate(set) var createdAt : Date
-    public fileprivate(set) var updatedAt : Date
+//    public fileprivate(set) var updatedAt : Date
     public var approvedOn : Date
     
     // Status
@@ -49,13 +44,15 @@ final class Scholar: CloudKitItem {
     init() {
         location = CLLocation.init(latitude: 0, longitude: 0)
         shortBio = ""
-        itunes = nil
-        website = nil
-        linkedin = nil
-        github = nil
-        facebook = nil
-        imessage = nil
-        twitter = nil
+        
+        let socialMedia = ScholarSocialMedia.init()
+        socialMedia.itunes = nil
+        socialMedia.website = nil
+        socialMedia.linkedin = nil
+        socialMedia.github = nil
+        socialMedia.facebook = nil
+        socialMedia.imessage = nil
+        socialMedia.twitter = nil
         
         gender = ""
         birthday = Date()
@@ -63,35 +60,28 @@ final class Scholar: CloudKitItem {
         lastName = ""
         firstName = ""
         createdAt = Date()
-        batchWWDC = []
-        updatedAt = Date()
         
         status = .pending
         approvedOn = Date()
         password = ""
     }
     
-    init(record: CKRecord) throws {
+    init(record: CKRecord) {
         id = record.recordID
         location = record["location"] as! CLLocation
         shortBio = record["shortBio"] as! String
-        itunes = record["itunes"] as? String
-        website = record["website"] as? String
-        linkedin = record["linkedin"] as? String
-        github = record["github"] as? String
-        facebook = record["facebook"] as? String
-        imessage = record["imessage"] as? String
-        twitter = record["twitter"] as? String
+        socialMediaReference = record["socialMedia"] as! CKReference
         gender = record["gender"] as! String
         birthday = record["birthday"] as! Date
         email = record["email"] as! String
         lastName = record["lastName"] as! String
         firstName = record["firstName"] as! String
-        createdAt = record["createdAt"] as! Date
-        batchWWDC = record["batchWWDC"] as! [CKReference]
-        updatedAt = record["updatedAt"] as! Date
+        createdAt = record["creationDate"] as! Date
+        wwdcYears = record["wwdcYears"] as! [CKReference]
+        wwdcYearInfos = record["wwdcYearInfos"] as! [CKReference]
+//        updatedAt = record["updatedAt"] as! Date
         //        statusComment = try node.extract("statusComment")
-        status = record["status"] as! Scholar.Status
+        status = Scholar.Status(rawValue: record["status"] as! String)!
         
         approvedOn = record["approvedOn"] as! Date
 //        password = record["password"] as! String
@@ -100,13 +90,7 @@ final class Scholar: CloudKitItem {
     func makeCKRecord() -> CKRecord {
         let record = CKRecord.init(recordType: "Scholar", recordID: id)
         record["shortBio"] = self.shortBio as NSString
-        record["itunes"] = self.itunes as NSString?
-        record["website"] = self.website as NSString?
-        record["linkedin"] = self.linkedin as NSString?
-        record["github"] = self.github as NSString?
-        record["facebook"] = self.facebook as NSString?
-        record["twitter"] = self.twitter as NSString?
-        record["imessage"] = self.imessage as NSString?
+        record["socialMedia"] = self.socialMediaReference as CKReference
         
         record["location"] = self.location
         record["gender"] = self.gender as NSString
@@ -118,7 +102,8 @@ final class Scholar: CloudKitItem {
         record["status"] = self.status.rawValue as NSString
         record["approvedOn"] = self.approvedOn as NSDate
 
-        record["batchWWDC"] = self.batchWWDC as NSArray
+        record["wwdcYearInfos"] = self.wwdcYearInfos as NSArray
+        record["wwdcYears"] = self.wwdcYears as NSArray
         
         return record
     }

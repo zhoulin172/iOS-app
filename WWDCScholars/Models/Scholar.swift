@@ -10,7 +10,7 @@ import CloudKit
 import Foundation
 
 final class Scholar: CloudKitItem {
-    var id: CKRecordID = CKRecordID(recordName: "5B8187CA-F3F5-432C-8904-31C5614470E9")
+    var id: CKRecordID = CKRecordID(recordName: UUID.init().uuidString)
     
     // General
     public var firstName : String
@@ -65,7 +65,7 @@ final class Scholar: CloudKitItem {
         createdAt = Date()
         batchWWDC = []
         updatedAt = Date()
-        //        statusComment = ""
+        
         status = .pending
         approvedOn = Date()
         password = ""

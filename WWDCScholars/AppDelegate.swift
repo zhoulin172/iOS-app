@@ -23,51 +23,51 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.applyScholarsStyle()
         UITabBar.applyScholarsStyle()
         
-        let testScholar = Scholar.init()
-        testScholar.location = CLLocation.init(latitude: 52.062226, longitude: 5.372548)
-        testScholar.shortBio = "Hi this is my short bio"
-        
-        let socialMedia = ScholarSocialMedia.init()
-        socialMedia.itunes = "https://itunes.apple.com"
-        socialMedia.website = "logicbit.nl"
-        socialMedia.linkedin = "linkedin.com"
-        socialMedia.github = "github.com"
-        socialMedia.facebook = "facebook.com"
-        socialMedia.imessage = "matthijs@logicbit.nl"
-        socialMedia.twitter = "https://twitter.com"
-        socialMedia.save()
-        testScholar.socialMediaReference = CKReference(recordID: socialMedia.id, action: .deleteSelf)
-        testScholar.gender = "male"
-        testScholar.birthday = Date.init(timeIntervalSince1970: 925171200)
-        testScholar.email = "matthijs@logicbit.nl"
-        testScholar.lastName = "Logika"
-        testScholar.firstName = "Matthijs"
-        testScholar.wwdcYearInfos = []
-        //        statusComment = ""
-        testScholar.status = .pending
-        testScholar.approvedOn = Date()
-        testScholar.password = "Password"
-        
-        
-        let path = AppDelegate.createLocalUrl(forImageNamed: "IMG_1817")!
-        let wwdcItem = WWDCYearInfo.init(for: testScholar.id, yearReference: CKRecordID.init(recordName: "WWDC 2017"), profilePicture: "https://google.com", acceptanceEmail: "Acceptance", screenshots: [CKAsset.init(fileURL: path)], videoLink: "Video", githubAppLink: "Github", appType: "both", appStoreSubmissionLink: "none", appliedAs: "scholar")
-        testScholar.wwdcYearInfos = [CKReference.init(recordID: wwdcItem.id, action: .deleteSelf)]
-        testScholar.wwdcYears = [CKReference.init(recordID: CKRecordID.init(recordName: "WWDC 2017"), action: .none)]
-
-        wwdcItem.save() { item, err in
-            print (err)
-        }
-        
-        testScholar.save(){ item, err in
-            print (err)
-        }
-
-        let lastYearItems = CKQuery.init(recordType: "WWDCItem", predicate: NSPredicate.init(format: "year == '2017'"))
-        
-        CKHelper.sharedInstance.publicDatabase.perform(lastYearItems, inZoneWith: nil) { (item, error) in
-            print (item)
-            print (error)
-        }
+//        let testScholar = Scholar.init()
+//        testScholar.location = CLLocation.init(latitude: 52.062226, longitude: 5.372548)
+//        testScholar.shortBio = "Hi this is my short bio"
+//        
+//        let socialMedia = ScholarSocialMedia.init()
+//        socialMedia.itunes = "https://itunes.apple.com"
+//        socialMedia.website = "logicbit.nl"
+//        socialMedia.linkedin = "linkedin.com"
+//        socialMedia.github = "github.com"
+//        socialMedia.facebook = "facebook.com"
+//        socialMedia.imessage = "matthijs@logicbit.nl"
+//        socialMedia.twitter = "https://twitter.com"
+//        socialMedia.save()
+//        testScholar.socialMediaReference = CKReference(recordID: socialMedia.id, action: .deleteSelf)
+//        testScholar.gender = "male"
+//        testScholar.birthday = Date.init(timeIntervalSince1970: 925171200)
+//        testScholar.email = "matthijs@logicbit.nl"
+//        testScholar.lastName = "Logika"
+//        testScholar.firstName = "Matthijs"
+//        testScholar.wwdcYearInfos = []
+//        //        statusComment = ""
+//        testScholar.status = .pending
+//        testScholar.approvedOn = Date()
+//        testScholar.password = "Password"
+//        
+//        
+//        let path = AppDelegate.createLocalUrl(forImageNamed: "IMG_1817")!
+//        let wwdcItem = WWDCYearInfo.init(for: testScholar.id, yearReference: CKRecordID.init(recordName: "WWDC 2017"), profilePicture: "https://google.com", acceptanceEmail: "Acceptance", screenshots: [CKAsset.init(fileURL: path)], videoLink: "Video", githubAppLink: "Github", appType: "both", appStoreSubmissionLink: "none", appliedAs: "scholar")
+//        testScholar.wwdcYearInfos = [CKReference.init(recordID: wwdcItem.id, action: .deleteSelf)]
+//        testScholar.wwdcYears = [CKReference.init(recordID: CKRecordID.init(recordName: "WWDC 2017"), action: .none)]
+//
+//        wwdcItem.save() { item, err in
+//            print (err)
+//        }
+//        
+//        testScholar.save(){ item, err in
+//            print (err)
+//        }
+//
+//        let lastYearItems = CKQuery.init(recordType: "WWDCItem", predicate: NSPredicate.init(format: "year == '2017'"))
+//        
+//        CKHelper.sharedInstance.publicDatabase.perform(lastYearItems, inZoneWith: nil) { (item, error) in
+//            print (item)
+//            print (error)
+//        }
         
         return true
     }

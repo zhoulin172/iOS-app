@@ -57,12 +57,23 @@ internal final class ScholarsViewController: UIViewController, UICollectionViewD
         scholarCell.backgroundColor = .scholarsPurple
         let scholar = scholars[indexPath.row]
         scholarCell.nameLabel.text = scholar.firstName
+        scholarCell.profilePictureImageView.image = nil
+        CKHelper.sharedInstance.publicDatabase.fetch(withRecordID: scholar.wwdcYearInfos.last!.recordID) { obj, err in
+            if err != nil {
+                print (err)
+                return
+            }
+            let info = WWDCYearInfo.init(record: obj!)
+            DispatchQueue.main.async {
+            scholarCell.profilePictureImageView.image = info.profilePicture.image()
+            }
+        }
         return scholarCell
     }
     
     func fetchDataFromServer() {
-        let ref = CKReference.init(recordID: CKRecordID.init(recordName: "WWDC 2017"), action: .none)
-        let pred = NSPredicate.init(format: "wwdcYears contains %@", ref)
+        let ref = CKReference.init(recordID: CKRecordID.init(recordName: "WWDC 2016"), action: .none)
+        let pred = NSPredicate.init(format: "wwdcYears contains %@ AND status == 'approved'", ref)
         let query = CKQuery(recordType: "Scholar", predicate: pred)
         let operation = CKQueryOperation(query: query)
         operation.resultsLimit = 35
@@ -78,7 +89,7 @@ internal final class ScholarsViewController: UIViewController, UICollectionViewD
                     self.scholars = newScholars
                     self.scholarCollectionView.reloadData()
                 } else {
-                    let ac = UIAlertController(title: "Fetch failed", message: "There was a problem fetching the list of whistles; please try again: \(error!.localizedDescription)", preferredStyle: .alert)
+                    let ac = UIAlertController(title: "Fetch failed", message: "There was a problem fetching the list of scholars; please try again: \(error!.localizedDescription)", preferredStyle: .alert)
                     ac.addAction(UIAlertAction(title: "OK", style: .default))
                     self.present(ac, animated: true)
                 }

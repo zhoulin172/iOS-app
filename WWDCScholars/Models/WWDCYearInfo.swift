@@ -15,8 +15,8 @@ class WWDCYearInfo: CloudKitItem {
     var scholarReference: CKReference
     var yearReference: CKReference
     
-    let profilePicture: String
-    let acceptanceEmail: String?
+    let profilePicture: CKAsset
+    let acceptanceEmail: CKAsset?
     let videoLink: String?
     let screenshots: [CKAsset] //Screenshots
     let githubAppLink: String?
@@ -27,7 +27,7 @@ class WWDCYearInfo: CloudKitItem {
     // student/stem/both
     let appliedAs: String
     
-    init(for scholarRecordId: CKRecordID, yearReference: CKRecordID, profilePicture: String, acceptanceEmail: String?, screenshots: [CKAsset], videoLink: String?, githubAppLink: String?, appType: String, appStoreSubmissionLink: String?, appliedAs: String) {
+    init(for scholarRecordId: CKRecordID, yearReference: CKRecordID, profilePicture: CKAsset, acceptanceEmail: CKAsset?, screenshots: [CKAsset], videoLink: String?, githubAppLink: String?, appType: String, appStoreSubmissionLink: String?, appliedAs: String) {
         self.scholarReference = CKReference.init(recordID: scholarRecordId, action: .none)
         self.yearReference = CKReference.init(recordID: scholarRecordId, action: .none)
         self.profilePicture = profilePicture
@@ -43,8 +43,8 @@ class WWDCYearInfo: CloudKitItem {
     required init(record: CKRecord) {
         scholarReference  = record["scholar"] as! CKReference
         yearReference = record["year"] as! CKReference
-        profilePicture = record["profilePicture"] as! String
-        acceptanceEmail = record["acceptanceEmail"] as! String?
+        profilePicture = record["profilePicture"] as! CKAsset
+        acceptanceEmail = record["acceptanceEmail"] as! CKAsset?
         screenshots = record["screenshots"] as! [CKAsset]
         videoLink = record["videoLink"] as! String?
         githubAppLink = record["githubAppLink"] as! String?
@@ -57,8 +57,8 @@ class WWDCYearInfo: CloudKitItem {
         let record = CKRecord.init(recordType: "WWDCYearInfo", recordID: id)
         record["scholar"] = self.scholarReference
         record["year"] = self.yearReference
-        record["profilePicture"] = self.profilePicture as NSString
-        record["acceptanceEmail"] = self.acceptanceEmail as NSString?
+        record["profilePicture"] = self.profilePicture as CKAsset
+        record["acceptanceEmail"] = self.acceptanceEmail as CKAsset?
         record["screenshots"] = self.screenshots as NSArray
         record["videoLink"] = self.videoLink as NSString?
         record["githubAppLink"] = self.githubAppLink as NSString?

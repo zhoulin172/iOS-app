@@ -69,6 +69,43 @@ internal final class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print (error)
 //        }
         
+        CKHelper.sharedInstance.container.requestApplicationPermission(.userDiscoverability) { (status, error) in
+            CKHelper.sharedInstance.container.fetchUserRecordID { (record, error) in
+                CKHelper.sharedInstance.publicDatabase.fetch(withRecordID: record!, completionHandler: { (rec, error) in
+                    let schol = rec!["scholar"] as? CKReference
+                    
+                    if schol == nil {
+                        CKHelper.sharedInstance.container.discoverUserIdentity(withUserRecordID: record!, completionHandler: { (userID, error) in
+//                            print(userID?.hasiCloudAccount)
+//                            print(userID?.lookupInfo?.phoneNumber)
+//                            print(userID?.lookupInfo?.emailAddress)
+                            
+                            print("Looking up scholar with name" + (userID?.nameComponents?.givenName)! + " " + (userID?.nameComponents?.familyName)!)
+                            let query = CKQuery.init(recordType: "Scholar", predicate: NSPredicate.init(format: "firstName = '\((userID?.nameComponents?.givenName)!)' AND lastName = '\((userID?.nameComponents?.familyName)!)'"))
+                            CKHelper.sharedInstance.publicDatabase.perform(query, inZoneWith: nil, completionHandler: { (records, errror) in
+                                print (records)
+                                if records?.count == 1 {
+                                    rec!["scholar"] = CKReference.init(recordID: records![0].recordID, action: .none)
+                                    let saveRecordsOperation = CKModifyRecordsOperation()
+                                    saveRecordsOperation.recordsToSave = [rec!]
+                                    saveRecordsOperation.savePolicy = .changedKeys
+                                    saveRecordsOperation.perRecordCompletionBlock = { (record, error) in
+//                                        completion?(record, error)
+                                    }
+                                    saveRecordsOperation.completionBlock = {
+                                        print ("Done")
+                                    }
+                                    CKHelper.sharedInstance.publicDatabase.add(saveRecordsOperation)
+                                }
+                            })
+                        })
+                    }
+                    print (schol)
+                })
+                
+            }
+        }
+        
         return true
     }
 

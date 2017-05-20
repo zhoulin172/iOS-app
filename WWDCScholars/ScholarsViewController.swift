@@ -48,7 +48,7 @@ internal final class ScholarsViewController: UIViewController {
     private func configureBatchContentController() {
         self.batchCollectionViewContentController.configure(collectionView: self.batchCollectionView)
         
-        let batches: [ExampleBatch] = [BatchEarlier(), Batch2014(), Batch2015(), Batch2016(), Batch2017()]
+        let batches: [BatchInfo] = [BatchInfo2013(), BatchInfo2014(), BatchInfo2015(), BatchInfo2016(), BatchInfo2016()]
         let batchesSectionContent = ScholarsViewControllerCellContentFactory.batchesSectionContent(from: batches)
         
         self.batchCollectionViewContentController.add(sectionContent: batchesSectionContent)
@@ -58,10 +58,10 @@ internal final class ScholarsViewController: UIViewController {
     private func configureScholarContentController() {
         self.scholarCollectionViewContentController.configure(collectionView: self.scholarCollectionView)
         
-        let scholars: [ExampleScholar] = [ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne()]
-        let batchesSectionContent = ScholarsViewControllerCellContentFactory.scholarSectionContent(from: scholars)
+        let scholars: [ExampleScholar] = [ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne(), ScholarOne()]
+        let scholarSectionContent = ScholarsViewControllerCellContentFactory.scholarSectionContent(from: scholars)
         
-        self.scholarCollectionViewContentController.add(sectionContent: batchesSectionContent)
+        self.scholarCollectionViewContentController.add(sectionContent: scholarSectionContent)
         self.scholarCollectionViewContentController.reloadContent()
     }
 }
